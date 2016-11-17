@@ -1,0 +1,44 @@
+name = Bootstrap SASS
+description = A Starterkit that uses the Bootstrap Framework SASS source files and must be compiled (not for beginners).
+core = 7.x
+base theme = bootstrap
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/style.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'
+scripts[] = 'js/script.js'
+
+; Disable BootstrapCDN so the compiled SASS source files can be used.
+settings[bootstrap_cdn] = ''
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Libraries
+;;;;;;;;;;;;;;;;;;;;;
+libraries[highcharts/js][download][type] = file
+libraries[highcharts/js][download][url] = http://code.highcharts.com/highcharts.js

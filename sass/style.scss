@@ -1,0 +1,194 @@
+// Bootstrap library.
+@import 'base/bootstrap';
+
+// Layout and Drupal Modules Theming.
+@import 'layout/layout';  // Theme Customizations for Region/Layout changes //
+@import 'components/blocks';  // Theme Customizations to Blocks //
+@import 'components/navigation';  // Theme Customizations to Navigation //
+@import 'components/views';  // Theme Customizations to Views //
+@import 'components/buttons';  // Theme Customizations for CTAs/Buttons //
+@import 'components/forms';  // Theme Customizations to Forms/Webforms //
+@import 'components/panels';  // Theme Customizations to Panels //
+@import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
+@import 'custom';  // Uncategorized Theme Customizations //
+
+form {
+  div {
+    @extend .form-group;
+    @extend .form-group-lg;
+  }
+}
+
+.touch-menu-wrapper {
+  //background-color: #ccc;
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-lg;
+  }
+}
+
+.menu-block-wrapper {
+  //@extend .touch-menu-wrapper;
+}
+
+#block-system-user-menu {
+  ul {
+    @extend .list-inline;
+  }
+}
+// Print
+.print-content {
+  h2 {
+    a { color: #990000; }
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    float: left;
+  }
+  .print-header {
+    .terrcardtitle {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+    .terrno {
+      text-align: right;
+      h1 {
+        font-size: 2.5rem;
+      }
+      .terrlabel {
+        text-transform: uppercase;
+      }
+      .terrname {
+        color: #990000;
+      }
+    }
+  }
+  .terr-donotvisits, .terr-landmarks {
+    h2{
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+  .terr-donotvisits {
+    h2 {}
+    .text {}
+    p {}
+    ul {
+      // @extend .list-group;
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      li {
+        // @extend .list-group-item;
+      }
+    }
+  }
+  .terr-landmarks {
+    h2 {}
+    p {}
+  }
+}
+
+// Content Region
+.region-content {
+  .menu {
+    a {
+      width: 100%;
+      @extend .btn;
+      @extend .btn-default;
+      @extend .btn-lg;
+    }
+  }
+  .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .btn-lg {
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+  .views-table {
+    @extend .table;
+  }
+  .event-list {
+    .confirmed {
+      @extend .label;
+      @extend .label-success;
+    }
+    .pending {
+      @extend .label;
+      @extend .label-default;
+    }
+  }
+}
+
+#block-views-f54da2101b27310e100915fbfd032086 { //page: time/group/% Group Count
+  @extend .col-md-3;
+  text-align: center;
+  .group-count {
+    font-size: 50px;
+  }
+}
+#block-views-81965e874eee9c51043cac00d0a3e93e { //page: time/group/% 6 month Chart
+  @extend .col-md-9;
+}
+
+// Aside Secondary
+.region-sidebar-second {
+  .menu {
+    a {
+      width: 100%;
+      @extend .btn;
+      @extend .btn-default;
+      @extend .btn-lg;
+    }
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+.footer {
+  width: 100%;
+  margin-top: 50px;
+  background-color: #333;
+  padding: 2em 0;
+  text-align: center;
+  a {
+    color: #FFF;
+    @extend .btn;
+  }
+  li {
+    .first {
+      a {
+
+      &:before {
+        // @extend .glyphicon;
+        // @extend .glyphicon-cog;
+      }
+    }
+    }
+  }
+}
+
+// Front page
+.front {
+  &.not-logged-in.page-user {
+    .page-header {
+      display: none!important;
+    }
+  }
+}
+.not-front {
+  &.not-logged-in.page-user {
+    .page-header {
+      display: none!important;
+    }
+  }
+}
