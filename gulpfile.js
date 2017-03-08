@@ -31,6 +31,12 @@ gulp.task('browsersync', ['sass'], function () {
       reloadDelay: 1000
     });
 
+  gulp.task('fonts', function() {
+      return gulp.src([
+                      'node_modules/bootstrap-sass/assets/fonts/bootstrap/*.*'])
+              .pipe(gulp.dest('fonts/'));
+    });
+
     gulp.watch("sass/**/*.scss", ['sass']).on('change', browserSync.reload);
   });
 
@@ -41,4 +47,8 @@ gulp.task('sass', function () {
         .pipe(sass())
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
+  });
+
+gulp.task('default', ['sass', 'fonts'], function () {
+    gulp.watch('sass/**/*.scss', ['init']);
   });
