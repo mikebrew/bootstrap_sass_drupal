@@ -12,32 +12,90 @@
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'custom';  // Uncategorized Theme Customizations //
 
-form {
-  div {
-    @extend .form-group;
-    @extend .form-group-lg;
+
+//Sticky Footer
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 85px;
+}
+.wrapper {}
+.navbar {}
+.main-container {}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 85px;
+}
+
+// Global classes
+.label- {
+  &available {
+    @extend .label-success;
+  }
+  &assigned {
+    @extend .label-primary;
+  }
+  &pending {
+    @extend .label-warning;
+  }
+  &unavailable {
+    @extend .label-default;
   }
 }
 
-.touch-menu-wrapper {
-  //background-color: #ccc;
-  a {
-    @extend .btn;
-    @extend .btn-default;
-    @extend .btn-lg;
-  }
-}
-
-.menu-block-wrapper {
-  //@extend .touch-menu-wrapper;
-}
-
-#block-system-user-menu {
-  ul {
-    @extend .list-inline;
-  }
-}
 // Print
+@page {
+  size: 5.5in 8.5in;
+}
+@media all {
+	.page-break	{ display: none; }
+}
+@media print {
+  .page-break	{
+    display: block;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+  .territory-image {
+    width: 66.6666666667%!important;
+  }
+  .territory-streets {
+    width: 33.3333333333%!important;
+  }
+}
+.break-after {
+    display: block;
+    page-break-after: always;
+    position: relative;
+}
+
+.break-before {
+    display: block;
+    page-break-before: always;
+    position: relative;
+}
+
+// Hide for print: .hidden-print
+// Show only for print: .visible-print-block -- .visible-print-inline -- .vissible-print-inline-block
+#navbar,
+.alert,
+.region-page-top,
+header,
+aside,
+footer,
+#block-menu-block-2,
+.menu-name-menu-territory,
+.easy-breadcrumb,
+#mini-panel-territory_admin_menu,
+.view-territory-edit-control,
+.footer-container {
+  @extend .hidden-print;
+}
+
 .print-content {
   h2 {
     a { color: #990000; }
@@ -46,7 +104,7 @@ form {
     display: block;
     width: 100%;
     height: auto;
-    float: left;
+    // float: left;
   }
   .print-header {
     .terrcardtitle {
@@ -80,9 +138,9 @@ form {
     p {}
     ul {
       // @extend .list-group;
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
+      // columns: 2;
+      // -webkit-columns: 2;
+      // -moz-columns: 2;
       li {
         // @extend .list-group-item;
       }
@@ -94,6 +152,137 @@ form {
   }
 }
 
+.territory-print { //Territory print page
+  // margin-top: -50px;
+  header,
+  aside,
+  footer,
+  .region-page-top {
+    display: none;
+  }
+  .container {
+    // margin: 0!important;
+    // padding: 0!important;
+  }
+  .col-sm-9 {
+    width: 100%!important;
+    // padding: 0!important;
+  }
+}
+// -- end Print
+
+
+
+// -----
+$label-day-color: #777;
+.label- {
+  color: #333;
+  &1 { // in use
+    background-color: #f0ad4e; //Orange
+    color: inherit;
+  }
+  &2 { // completed
+    background-color: #C6DDCC; //Green
+    color: inherit;
+  }
+  &Mon {
+    // background-color: $label-day-color;
+    background-color: #CBB8C3;
+    color: inherit;
+  }
+  &Tue {
+    // background-color: lighten($label-day-color, 5%);
+    background-color: #C6DDCC;
+    color: inherit;
+  }
+  &Wed {
+    // background-color: lighten($label-day-color, 10%);
+    background-color: #F8EADA;
+    color: inherit;
+  }
+  &Thu {
+    // background-color: lighten($label-day-color, 15%);
+    background-color: #EFCEC7;
+    color: inherit;
+  }
+  &Fri {
+    // background-color: lighten($label-day-color, 20%);
+    background-color: #EBC7D0;
+    color: inherit;
+  }
+  &Sat {
+    // background-color: lighten($label-day-color, 25%);
+    // background-color: #BACDDD;
+    background-color: #286090;
+    color: #FFF;
+  }
+  &Sun {
+    // background-color: lighten($label-day-color, 30%);
+    background-color: #E0DEDA;
+    color: inherit;
+  }
+  &Congregation, &Special {
+    // background-color: #BACDDD;
+    background-color: #286090;
+    color: #FFF;
+  }
+  &Midweek {
+    background-color: #E0DEDA;
+    color: inherit;
+  }
+}
+table {
+  tr.congregation, tr.special {
+    // border-bottom: solid;
+    background-color: #d9edf7!important;
+  }
+}
+
+//
+form {
+  div {
+    @extend .form-group;
+    @extend .form-group-lg;
+  }
+}
+
+.touch-menu-wrapper {
+  //background-color: #ccc;
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-lg;
+  }
+}
+// CLM specific
+.treasuresfromgodsword {
+  background-color: #5A6A70;
+  color: #FFF;
+}
+.applyyourselffieldministry {
+  background-color: #C18626;
+  color: #FFF;
+}
+.livingaschristians {
+  background-color: #961526;
+  color: #FFF;
+}
+.assignable {
+  display: block;
+}
+.unassignable {
+  display: none;
+}
+
+.menu-block-wrapper {
+  //@extend .touch-menu-wrapper;
+}
+
+#block-system-user-menu {
+  ul {
+    @extend .list-inline;
+  }
+}
 // Content Region
 .region-content {
   .menu {
