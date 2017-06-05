@@ -176,7 +176,8 @@ footer,
 // -----
 $label-day-color: #777;
 .label- {
-  color: #333;
+  // color: #333;
+  color: inherit;
   &1 { // in use
     background-color: #f0ad4e; //Orange
     color: inherit;
@@ -230,7 +231,12 @@ $label-day-color: #777;
     background-color: #E0DEDA;
     color: inherit;
   }
-}
+  &supports {
+    background-color: #C6DDCC; //Green
+  }
+  &supports-exceptions {}
+} // end labels
+
 table {
   tr.congregation, tr.special {
     // border-bottom: solid;
