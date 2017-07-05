@@ -33,5 +33,9 @@
        $(".field-name-field-teritory-assign-expire").addClass("hidden");
     }
 
+    //ThisGoodNews.org
+    // change button text
+    $('#edit-field-smpw-dates-available-fc .field-add-more-submit').text('Add Available Day');
+
   }); // end document.ready
 })(jQuery);
