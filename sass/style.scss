@@ -19,6 +19,47 @@
   color: #333;
 }
 
+.info-block {
+  display: block;
+  color: #FFF;
+  text-align: center;
+  // padding: 10px 20px;
+  @extend .col-md-4;
+  .count {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px;
+  }
+  .count-label {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 0;
+    width: 100%;
+    display: inline-block;
+  }
+}
+.info-default {
+  @extend .label-default;
+}
+.info-success {
+  @extend .label-success;
+  .count-label {
+    background: darken($color-green, 10);
+  }
+}
+.info-warning {
+  @extend .label-warning;
+  .count-label {
+    background: darken($color-orange, 10);
+  }
+}
+.info-danger {
+  @extend .label-danger;
+  .count-label {
+    background: darken($color-red, 10);
+  }
+
+}
 
 //Sticky Footer
 html {
