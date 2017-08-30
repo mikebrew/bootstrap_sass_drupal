@@ -116,6 +116,14 @@
   </div>
 </header>
 
+<?php if (!empty($page['hero'])): ?>
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <?php print render($page['hero']); ?>
+    </div>
+  </div>
+<?php endif; ?>
+
 <div class="main-container <?php print $container_class; ?>">
 
   <header role="banner" id="page-header">

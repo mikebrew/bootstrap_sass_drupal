@@ -13,24 +13,80 @@
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'custom';  // Uncategorized Theme Customizations //
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+$Montserrat: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$OpenSans: 'Open Sans', sans-serif;
+$font-header: $Montserrat;
+$font-default: $OpenSans;
+
 // Helper Classes
 .label-support-partial {
   background-color: $color-green-muted;
   color: #333;
 }
 
-
-//Sticky Footer
+// HTML
 html {
   position: relative;
   min-height: 100%;
 }
+
+h1, h2, h3, h4 {
+  font-family: $font-header;
+}
+
 body {
+  font-family: $font-default;
   margin-bottom: 85px;
 }
+
+// Main Classes
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
 .wrapper {}
-.navbar {}
-.main-container {}
+.logo {
+  // @extend .col-md-4;
+  display: block;
+  max-width: 120px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.navbar {
+  @extend .container;
+  background-color: #FFF;
+  &-default {
+      border-color: #FFF;
+  }
+  .menu {
+    text-transform: lowercase;
+    @extend .pull-right;
+    // @extend .col-md-4;
+  }
+  .phone {
+    @extend .pull-left;
+    // @extend .col-md-4;
+  }
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  background-color: #FFF;
+  color: #990000;
+}
+
+.main-container {
+  @extend .container;
+}
+.region-content, .pane-webform-client-block-4 {
+  // @extend .container;
+}
+.home-intro {
+  text-align: center;
+}
 .footer {
   position: absolute;
   bottom: 0;
