@@ -78,6 +78,22 @@ body {
   color: #990000;
 }
 
+.hero-wrapper {
+  @extend .jumbotron;
+  background-color: rgba(8,27,51,1);
+  .hero-content {
+    @extend .container;
+    @extend .center-block;
+    text-align: center;
+    .h1 {
+      color: #FFF;
+    }
+    .intronametag {
+      color: #e54a35;
+    }
+  }
+}
+
 .main-container {
   @extend .container;
 }
