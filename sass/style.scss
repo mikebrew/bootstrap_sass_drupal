@@ -2,6 +2,7 @@
 @import 'base/bootstrap';
 
 // Layout and Drupal Modules Theming.
+@import 'components/colors';
 @import 'layout/layout';  // Theme Customizations for Region/Layout changes //
 @import 'components/blocks';  // Theme Customizations to Blocks //
 @import 'components/navigation';  // Theme Customizations to Navigation //
@@ -11,6 +12,12 @@
 @import 'components/panels';  // Theme Customizations to Panels //
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'custom';  // Uncategorized Theme Customizations //
+
+// Helper Classes
+.label-support-partial {
+  background-color: $color-green-muted;
+  color: #333;
+}
 
 
 //Sticky Footer
@@ -174,9 +181,12 @@ footer,
 
 
 // -----
+
+// Labels
 $label-day-color: #777;
 .label- {
   color: #333;
+  // color: inherit;
   &1 { // in use
     background-color: #f0ad4e; //Orange
     color: inherit;
@@ -230,7 +240,29 @@ $label-day-color: #777;
     background-color: #E0DEDA;
     color: inherit;
   }
-}
+  &supports {
+    @extend .label-success;
+  }
+  &supports-exceptions {
+    @extend .label-support-partial;
+  }
+  &supports-equivalentfacilitation {
+    @extend .label-support-partial;
+  }
+  &supports-compatibleat {
+    @extend .label-support-partial;
+  }
+  &doesnotsupport {
+    @extend .label-danger;
+  }
+  &notapplicable {
+    @extend .label-default;
+  }
+  &notapplicable-fundamentalalteration {
+    @extend .label-warning;
+  }
+} // end labels
+
 table {
   tr.congregation, tr.special {
     // border-bottom: solid;
@@ -379,5 +411,31 @@ form {
     .page-header {
       display: none!important;
     }
+  }
+}
+
+// ThisGoodNews.org
+.page-smpwp-availability {
+  #edit-field-email-email-wrapper, #edit-field-phone-mobile-value-wrapper {
+    @extend .col-sm-12;
+  }
+}
+.page-eform-submit-smpw-availability-survey {
+  .field-name-field-smpw-date-avail {
+    @extend .col-sm-6;
+    .control-label {
+      @extend .hidden; // hide date label
+    }
+  }
+  .field-name-field-smpwp-location {
+    @extend .hidden; //temporarily hide Zoo location in form
+  }
+  .tabledrag-toggle-weight-wrapper {
+    @extend .hidden; // hide "Show row weights" link
+  }
+}
+.page-eform-smpw-availability-survey-confirm {
+  .date-display-single {
+    @extend .h3;
   }
 }
