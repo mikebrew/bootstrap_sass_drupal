@@ -2,7 +2,6 @@
 @import 'base/bootstrap';
 
 // Layout and Drupal Modules Theming.
-@import 'components/colors';
 @import 'layout/layout';  // Theme Customizations for Region/Layout changes //
 @import 'components/blocks';  // Theme Customizations to Blocks //
 @import 'components/navigation';  // Theme Customizations to Navigation //
@@ -13,53 +12,6 @@
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'custom';  // Uncategorized Theme Customizations //
 
-// Helper Classes
-.label-support-partial {
-  background-color: $color-green-muted;
-  color: #333;
-}
-
-.info-block {
-  display: block;
-  color: #FFF;
-  text-align: center;
-  // padding: 10px 20px;
-  @extend .col-md-4;
-  .count {
-    font-size: 2em;
-    font-weight: bold;
-    padding: 20px;
-  }
-  .count-label {
-    font-size: 1em;
-    padding: 10px 20px;
-    margin: 0;
-    width: 100%;
-    display: inline-block;
-  }
-}
-.info-default {
-  @extend .label-default;
-}
-.info-success {
-  @extend .label-success;
-  .count-label {
-    background: darken($color-green, 10);
-  }
-}
-.info-warning {
-  @extend .label-warning;
-  .count-label {
-    background: darken($color-orange, 10);
-  }
-}
-.info-danger {
-  @extend .label-danger;
-  .count-label {
-    background: darken($color-red, 10);
-  }
-
-}
 
 //Sticky Footer
 html {
@@ -222,12 +174,9 @@ footer,
 
 
 // -----
-
-// Labels
 $label-day-color: #777;
 .label- {
   color: #333;
-  // color: inherit;
   &1 { // in use
     background-color: #f0ad4e; //Orange
     color: inherit;
@@ -281,29 +230,7 @@ $label-day-color: #777;
     background-color: #E0DEDA;
     color: inherit;
   }
-  &supports {
-    @extend .label-success;
-  }
-  &supports-exceptions {
-    @extend .label-support-partial;
-  }
-  &supports-equivalentfacilitation {
-    @extend .label-support-partial;
-  }
-  &supports-compatibleat {
-    @extend .label-support-partial;
-  }
-  &doesnotsupport {
-    @extend .label-danger;
-  }
-  &notapplicable {
-    @extend .label-default;
-  }
-  &notapplicable-fundamentalalteration {
-    @extend .label-warning;
-  }
-} // end labels
-
+}
 table {
   tr.congregation, tr.special {
     // border-bottom: solid;

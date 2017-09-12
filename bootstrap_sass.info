@@ -30,9 +30,7 @@ stylesheets[all][] = css/style.css
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;
 
-; scripts[] = 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'
-scripts[] = 'js/bootstrap.min.js'
-scripts[] = 'js/clipboard.min.js'
+scripts[] = 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'
 scripts[] = 'js/script.js'
 
 ; Disable BootstrapCDN so the compiled SASS source files can be used.
