@@ -39,6 +39,9 @@
     // prepend html
     $("#edit-field-phone-mobile-value-wrapper").prepend("<div class='col-sm-12'><strong>OR</strong><div>");
 
+    // Hide date title
+    // $(".page-eform-submit-smpw-availability-survey .date-combo legend").addClass("hidden");
+
 
   }); // end document.ready
 })(jQuery);

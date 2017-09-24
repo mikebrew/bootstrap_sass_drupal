@@ -420,8 +420,18 @@ form {
     @extend .col-sm-12;
   }
 }
-.page-eform-submit-smpw-availability-survey {
+.page-eform-submit-smpw-availability-survey { // SMPW Availability Survey page
+  //reset form
+  .panel-body {
+    padding: 0px;
+  }
+  .form-group, form div {
+    margin-bottom: 0px;
+  }
+  // end reset
+
   .field-name-field-smpw-date-avail {
+    width: inherit;
     @extend .col-sm-6;
     .control-label {
       @extend .hidden; // hide date label
@@ -433,8 +443,16 @@ form {
   .tabledrag-toggle-weight-wrapper {
     @extend .hidden; // hide "Show row weights" link
   }
-}
-.page-eform-smpw-availability-survey-confirm {
+  legend.panel-heading {
+    display: none!important;
+  }
+  span.panel-title.fieldset-legend { display: none; }
+  thead { display: none; }
+  form .field-multiple-table td.field-multiple-drag { display: none; }
+  .table-striped>tbody>tr:nth-of-type(odd) { background-color: inherit}
+} // end survey page
+
+.page-eform-smpw-availability-survey-confirm { // Confirmation page
   .date-display-single {
     @extend .h3;
   }
