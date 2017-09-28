@@ -417,11 +417,17 @@ form {
 // ThisGoodNews.org
 .page-smpwp-availability {
   #edit-field-email-email-wrapper, #edit-field-phone-mobile-value-wrapper {
-    @extend .col-sm-12;
+    // @extend .col-sm-12;
   }
 }
 .page-eform-submit-smpw-availability-survey { // SMPW Availability Survey page
   //reset form
+  .panel {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .panel-default { border-color: #FFF; }
   .panel-body {
     padding: 0px;
   }
@@ -430,12 +436,31 @@ form {
   }
   // end reset
 
+  .field-name-field-smpw-date-avail,
+  .field-name-field-smpw-shift-avail,
+  .field-name-field-smpw-shift-avail-details {
+    @extend .col-md-4;
+    // @extend .clearfix;
+  }
+  .field-name-field-smpw-shift-avail,
+  .field-name-field-smpw-shift-avail-details {
+    .checkbox {
+      label {
+        padding-bottom: 10px;
+      }
+    }
+  }
   .field-name-field-smpw-date-avail {
     width: inherit;
-    @extend .col-sm-6;
+    // @extend .col-sm-6;
+    // @extend .clearfix;
     .control-label {
       @extend .hidden; // hide date label
     }
+  }
+  .field-name-field-smpw-shift-avail {
+    // @extend .col-sm-6;
+    // @extend .clearfix;
   }
   .field-name-field-smpwp-location {
     @extend .hidden; //temporarily hide Zoo location in form
@@ -450,6 +475,9 @@ form {
   thead { display: none; }
   form .field-multiple-table td.field-multiple-drag { display: none; }
   .table-striped>tbody>tr:nth-of-type(odd) { background-color: inherit}
+
+  button[value="Remove"] { display: none; } //hide remove button
+  
 } // end survey page
 
 .page-eform-smpw-availability-survey-confirm { // Confirmation page
