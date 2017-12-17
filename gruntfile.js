@@ -20,7 +20,7 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'css/style.css': 'sass/style.scss'
+          'bootstrap_sass/css/style.css': 'src/sass/style.scss'
         }
       }
     },
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
       sass: {
         files: [
-          'sass/**/*.scss'
+          'src/sass/**/*.scss'
         ],
         tasks: ['sass']
       }
