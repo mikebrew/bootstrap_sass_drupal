@@ -13,6 +13,24 @@
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'custom';  // Uncategorized Theme Customizations //
 
+
+// Fonts
+//--------
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+$font-body: 'Montserrat', sans-serif;
+$font-heading: 'Merriweather', serif;
+//
+body {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+}
+
 // Helper Classes
 .label-support-partial {
   background-color: $color-green-muted;
@@ -61,23 +79,6 @@
 
 }
 
-//Sticky Footer
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 85px;
-}
-.wrapper {}
-.navbar {}
-.main-container {}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 85px;
-}
 
 // Global classes
 .label- {
@@ -108,12 +109,6 @@ body {
     page-break-after: always;
     page-break-inside: avoid;
   }
-  .territory-image {
-    width: 66.6666666667%!important;
-  }
-  .territory-streets {
-    width: 33.3333333333%!important;
-  }
 }
 .break-after {
     display: block;
@@ -127,101 +122,6 @@ body {
     position: relative;
 }
 
-// Hide for print: .hidden-print
-// Show only for print: .visible-print-block -- .visible-print-inline -- .vissible-print-inline-block
-#navbar,
-.alert,
-.region-page-top,
-header,
-aside,
-footer,
-#block-menu-block-2,
-.menu-name-menu-territory,
-.easy-breadcrumb,
-#mini-panel-territory_admin_menu,
-.view-territory-edit-control,
-.footer-container {
-  @extend .hidden-print;
-}
-
-.print-content {
-  h2 {
-    a { color: #990000; }
-  }
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    // float: left;
-  }
-  .print-header {
-    .terrcardtitle {
-      text-align: left;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-    }
-    .terrno {
-      text-align: right;
-      h1 {
-        font-size: 2.5rem;
-      }
-      .terrlabel {
-        text-transform: uppercase;
-      }
-      .terrname {
-        color: #990000;
-      }
-    }
-  }
-  .terr-donotvisits, .terr-landmarks {
-    h2{
-      font-size: 2rem;
-      text-transform: uppercase;
-      margin: 0;
-    }
-  }
-  .terr-donotvisits {
-    h2 {}
-    .text {}
-    p {}
-    ul {
-      // @extend .list-group;
-      // columns: 2;
-      // -webkit-columns: 2;
-      // -moz-columns: 2;
-      li {
-        // @extend .list-group-item;
-      }
-    }
-  }
-  .terr-landmarks {
-    h2 {}
-    p {}
-  }
-}
-
-.territory-print { //Territory print page
-  // margin-top: -50px;
-  header,
-  aside,
-  footer,
-  .region-page-top {
-    display: none;
-  }
-  .container {
-    // margin: 0!important;
-    // padding: 0!important;
-  }
-  .col-sm-9 {
-    width: 100%!important;
-    // padding: 0!important;
-  }
-}
-// -- end Print
-
-
-
-// -----
 
 // Labels
 $label-day-color: #777;
@@ -319,14 +219,7 @@ form {
   }
 }
 
-.touch-menu-wrapper {
-  //background-color: #ccc;
-  a {
-    @extend .btn;
-    @extend .btn-default;
-    @extend .btn-lg;
-  }
-}
+
 // CLM specific
 .treasuresfromgodsword {
   background-color: #5A6A70;
@@ -347,110 +240,215 @@ form {
   display: none;
 }
 
-.menu-block-wrapper {
-  //@extend .touch-menu-wrapper;
-}
 
-#block-system-user-menu {
-  ul {
-    @extend .list-inline;
-  }
-}
 // Content Region
-.region-content {
-  .menu {
-    a {
-      width: 100%;
-      @extend .btn;
-      @extend .btn-default;
-      @extend .btn-lg;
-    }
-  }
-  .btn {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  .btn-lg {
-    @media screen and (max-width: 800px) {
-      width: 100%;
-    }
-  }
-  .views-table {
-    @extend .table;
-  }
-  .event-list {
-    .confirmed {
-      @extend .label;
-      @extend .label-success;
-    }
-    .pending {
-      @extend .label;
-      @extend .label-default;
-    }
-  }
-}
+.region-content {}
 
-#block-views-f54da2101b27310e100915fbfd032086 { //page: time/group/% Group Count
-  @extend .col-md-3;
-  text-align: center;
-  .group-count {
-    font-size: 50px;
-  }
-}
-#block-views-81965e874eee9c51043cac00d0a3e93e { //page: time/group/% 6 month Chart
-  @extend .col-md-9;
-}
 
 // Aside Secondary
 .region-sidebar-second {
-  .menu {
-    a {
-      width: 100%;
-      @extend .btn;
-      @extend .btn-default;
-      @extend .btn-lg;
-    }
-  }
-  .btn {
-    margin-bottom: 10px;
-  }
-}
-
-.footer {
-  width: 100%;
-  margin-top: 50px;
-  background-color: #333;
-  padding: 2em 0;
-  text-align: center;
-  a {
-    color: #FFF;
-    @extend .btn;
-  }
-  li {
-    .first {
-      a {
-
-      &:before {
-        // @extend .glyphicon;
-        // @extend .glyphicon-cog;
-      }
-    }
+  .block-menu-block {
+    a.active {
+      background-color: #EEE;
     }
   }
 }
+
+
 
 // Front page
 .front {
-  &.not-logged-in.page-user {
-    .page-header {
-      display: none!important;
+  &.not-logged-in.page-user {}
+}
+.not-front {
+  &.not-logged-in.page-user {}
+}
+
+// Admin menu
+#admin-menu {
+  @extend .clearfix;
+}
+
+.adminimal-menu {
+  .navbar-fixed-top {
+    margin-top: 30px;
+  }
+}
+
+// Header
+body.navbar-is-fixed-top {
+  padding-top: 70px; // Add padding for fixed navigation
+}
+.navbar-header {
+  .logo {
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
-.not-front {
-  &.not-logged-in.page-user {
-    .page-header {
-      display: none!important;
+
+// Navigation | Superfish overrides
+$nav-bg: #161e21;
+$nav-txt: #FFF;
+#navbar {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 12px;
+}
+.navbar-nav {
+  padding-top: 10px;
+}
+.navbar-inverse {
+  background-color: $nav-bg;
+
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: $nav-txt;
+}
+.sf-menu {
+  li {
+    background: $nav-bg!important;
+  }
+  a {
+    color: $nav-txt!important;
+    border: 1px solid $nav-bg!important;
+  }
+}
+
+li.dropdown:hover > .dropdown-menu { // Display subnav on hover
+    display: block;
+}
+
+// Hero section / Carousel slideshow
+.region-hero {
+  background: $blue;
+  padding: 4em 0 2em;
+  min-height: 400px;
+  color: #FFF;
+  border-bottom: 3px solid $orange;
+  h2 {
+    font-size: 3em;
+  }
+}
+.carousel {
+  // height: 500px;
+}
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+}
+
+// Featurette
+// *******************
+.featurette {
+  padding: 2em 0;
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+.views-row-even { // Featurette even rows
+  .featurette-image {
+    @extend .pull-right;
+  }
+}
+// Blog Featurette
+.blog-featurette-wrapper {}
+.blog-featurette {
+
+  .views-more-link {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-block;
+  }
+  .well {
+    height: 425px;
+    overflow: hidden;
+    position: relative;
+  }
+  .readmore-btn {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+// Blog page
+.blog_usernames_blog {
+  @extend .hidden; // hide personal blog link in footer
+}
+.node-type-blog {
+  .node-blog {
+    .field-image {
+      img {
+        @extend .center-block;
+        padding: 2em 0;
+      }
     }
+
+  }
+}
+.view-id-blog_aside_list {
+  a.active {
+    color: $red;
+  }
+}
+
+// Footer Prefix
+// *******************
+.footer_pre {
+  padding: 1em 0;
+  background: darken($gray, 30);
+  .form-item {
+    @extend .col-md-10;
+  }
+  .form-actions {
+    @extend .col-md-2;
+    @extend .col-xs-12;
+  }
+  .btn-primary {
+    height: 45px;
+    background-color: darken($gray, 40);
+    border-color: darken($gray, 50);
+    width: 100%;
+  }
+}
+
+// Footer
+// *******************
+.footer {
+  width: 100%;
+  // margin-top: 50px;
+  background-color: #333;
+  padding: 2em 0;
+  a {
+    color: lighten($blue, 40);
+  }
+  #block-menu-menu-footer-menu { // Footer menu links
+    @extend .col-sm-4;
+  }
+  #block-block-13 { // Payment block | PayPal
+    @extend .col-sm-4;
+    // @extend .pull-right;
+    img {
+      float: right;
+    }
+  }
+  #block-block-5 { // Copyright
+    @extend .col-sm-4;
+    color: #FFF;
+    // @extend .text-center;
+  }
+
+  #block-block-2 { // Secondary footer links | Intranet, Log out
+    @extend .col-sm-12;
+    // @extend .pull-right;
+
+  }
+  #block-block-3 { // Address block
+    @extend .col-md-12;
+    @extend .text-center;
   }
 }

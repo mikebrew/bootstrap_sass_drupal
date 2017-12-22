@@ -33,9 +33,20 @@
        $(".field-name-field-teritory-assign-expire").addClass("hidden");
     }
 
-    //ThisGoodNews.org
     // change button text
-    $('#edit-field-smpw-dates-available-fc .field-add-more-submit').text('Add Available Day');
+    // $('#edit-field-smpw-dates-available-fc .field-add-more-submit').text('Add Available Day');
+
+    // Add class to logo header
+    $(".navbar-header").addClass("col-md-2");
+
+    // Remove .menu class from footer
+    $("#block-menu-menu-footer-menu ul").removeClass("menu nav");
+
+    // Blog breadcrumb, hide users blog link
+    $( ".node-type-blog ol.breadcrumb li:nth-child(2)" ).addClass("hidden");
+
+    // Switch out default button to primary style on all webforms
+    $(".webform-submit").removeClass("btn-default").addClass("btn-primary btn-lg");
 
   }); // end document.ready
 })(jQuery);

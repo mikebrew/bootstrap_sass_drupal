@@ -72,6 +72,7 @@
  *
  * @ingroup templates
  */
+ $breadcrumb_array = drupal_get_breadcrumb();
 ?>
 <div class="wrapper">
 
@@ -116,6 +117,12 @@
   </div>
 </header>
 
+<?php if (!empty($page['hero'])): ?>
+  <div>
+    <?php print render($page['hero']); ?>
+  </div>
+<?php endif; ?>
+
 <div class="main-container <?php print $container_class; ?>">
 
   <header role="banner" id="page-header">
@@ -139,6 +146,7 @@
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      <?php //if (!empty($breadcrumb)): print $breadcrumb_array[0]; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
@@ -168,6 +176,11 @@
 </div>
 
 </div> <!-- End wrapper class -->
+<?php if (!empty($page['footer_pre'])): ?>
+  <div class="footer_pre">
+    <div class="<?php print $container_class; ?>"><?php print render($page['footer_pre']); ?></div>
+  </div>
+<?php endif; ?>
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
     <?php print render($page['footer']); ?>

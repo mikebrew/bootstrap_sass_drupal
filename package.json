@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.6.5",
+    "colors.css": "^3.0.0",
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.2.0",
     "grunt-cli": "^0.1.13",

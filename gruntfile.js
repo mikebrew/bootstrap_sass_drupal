@@ -20,7 +20,8 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'bootstrap_sass/css/style.css': 'src/sass/style.scss'
+          'bootstrap_sass/css/style.css': 'src/sass/style.scss',
+          '/Volumes/Omega8cc default/client_prod_7.56_001/sites/dtax.beta.brewingtonmedia.com/themes/bootstrap_sass/css/style.css': 'src/sass/style.scss'
         }
       }
     },
