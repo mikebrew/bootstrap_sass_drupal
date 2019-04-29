@@ -4,7 +4,7 @@
   "description": "A starter theme for Drupal",
   "main": "index.js",
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap-sass": "^3.4.1",
     "clipboard": "^1.6.1"
   },
   "devDependencies": {
