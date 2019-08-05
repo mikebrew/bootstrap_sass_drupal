@@ -1,0 +1,170 @@
+/* Header */
+
+header {
+  background-color: #1d1d1d;
+  a {
+    color: #FFF;
+    border-bottom: solid 2px transparent;
+    /* padding-bottom: 2px; */
+    &:hover {
+      border-bottom: solid 2px #A3273E;
+      transition: 0.4s;
+    }
+  }
+  p {
+      margin: 0px;
+  }
+}
+
+/* Logo */
+.block-logo, .block-delta-blocks-logo {
+  max-width: 110px;
+}
+#logo {
+  display: block;
+  width: 100px;
+  float: left;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.header-body {
+  position: relative;
+}
+.header-body a:hover {
+  text-decoration: none!important;
+}
+
+/* Explore Temple / Top menu block */
+.header-body-top {
+  display: block;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+/* Explore Temple  */
+.block-252 {
+
+
+}
+/* Top menu */
+#header-menu,
+#block-menu-menu-header-menu {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  a {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  ul.menu {
+      content: "";
+      clear: both;
+      display: table;
+      /* margin-right: auto; */
+      /* margin-left: auto; */
+      float: right;
+  }
+  li {
+    float: left;
+  }
+}
+
+
+/* Site name / Search block */
+.header-body-bottom {
+  display: block;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+
+/* Site name */
+h1.site-name,
+h2.site-name {
+  font-family: 'Crimson Text', serif;
+  font-weight: 100;
+  font-size: 2em!important;
+}
+.site-name a:hover {
+  border-bottom: none!important;
+}
+
+/* Search */
+.block-search {
+  fieldset input[type="focus"] {
+    background: #2f2f2f;
+    border-color: #464646;
+  }
+  input[type="text"] {
+    background: transparent;
+    border: 1px solid #363636;
+    width: 100%;
+    height: 45px;
+  }
+  input[type="text"]:focus {
+    border-color: #999;
+    background: #2f2f2f;
+  }
+  form,
+  form input[type="text"],
+  form input[type="submit"] {
+    opacity: 1;
+    visibility: visible;
+    max-height: 100px;
+  }
+  .form-actions {
+    button[type="submit"],
+    input[type="submit"],
+    a::after {
+      width: 22px;
+      height: 23px;
+      background: url('https://www.temple.edu/sites/all/modules/custom/tu_global/images/png/legacy-icon-search.png') no-repeat 0 center transparent;
+      background-size: 22px 23px;
+      text-indent: -10000em;
+      overflow: hidden;
+      border: none;
+    }
+    button[type="submit"],
+    input[type="submit"],
+    a,
+    a::after {
+      position: absolute;
+      top: 11px;
+      right: 15px;
+    }
+  }
+}
+
+
+
+#zone-menu select {
+	// display: none;
+}
+
+
+/*Main Menu*/
+
+#navbar {
+  a {
+    border-bottom: solid 2px transparent;
+    /* padding-bottom: 2px; */
+    &:hover {
+      border-bottom: solid 2px #A3273E;
+      transition: 0.4s;
+    }
+  }
+  li {
+    li {
+      a {
+        border-bottom: 1px solid #FFF;
+        &:hover {
+          color: #990000;
+          border-bottom: 1px solid #990000;
+        }
+      }
+    }
+  }
+}

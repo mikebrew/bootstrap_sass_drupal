@@ -75,47 +75,91 @@
  $breadcrumb_array = drupal_get_breadcrumb();
 ?>
 <div class="wrapper">
-
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="<?php print $container_class; ?>">
-    <div class="navbar-header">
-      <?php if ($logo): ?>
+  <header class="header-wrapper">
+    <div class="row">
+      <div id="logo" class="logo col-md-2">
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
-      <?php endif; ?>
+      </div>
+      <div class="header-body col-md-10">
+        <div class="heaer-body-top row">
+          <div id="header-explore" class="col-md-6">
+            <?php
+               $block =block_load('block',252);
+               $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+               print $output;
+            ?>
+          </div>
+          <div id="header-menu" class="col-md-6 pull-right">
+            <?php
+            $menu = menu_navigation_links('menu-header-menu');
+            print theme('links__menu_header_menu', array('links' => $menu));
+            ?>
+          </div>
+        </div>
+        <div class="header-body-bottom row">
+          <div class="col-md-6">
+            <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+          </div>
+          <div class="block-search col-md-6">
+            <?php global $search_form; print render(drupal_get_form('search_form')); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
+
+<header role="banner" id="page-header">
+  <?php if (!empty($site_slogan)): ?>
+    <p class="lead"><?php print $site_slogan; ?></p>
+  <?php endif; ?>
+
+  <?php print render($page['header']); ?>
+</header> <!-- /#page-header -->
+<div class="navbar-wrapper">
+  <div id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+    <div class="<?php print $container_class; ?>">
+      <div class="navbar-header">
+        <?php if ($logo): ?>
+          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (!empty($site_name)): ?>
+          <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <?php endif; ?>
+
+        <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <?php endif; ?>
+      </div>
 
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <div class="navbar-collapse collapse">
+          <nav role="navigation">
+            <?php if (!empty($primary_nav)): ?>
+              <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($secondary_nav)): ?>
+              <?php print render($secondary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+            <?php endif; ?>
+          </nav>
+        </div>
       <?php endif; ?>
     </div>
-
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
   </div>
-</header>
+</div>
 
 <?php if (!empty($page['hero'])): ?>
   <div>
@@ -125,13 +169,7 @@
 
 <div class="main-container <?php print $container_class; ?>">
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
 
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
 
   <div class="row">
 
