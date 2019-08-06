@@ -75,9 +75,9 @@
  $breadcrumb_array = drupal_get_breadcrumb();
 ?>
 <div class="wrapper">
-  <header role="banner" id="page-header" class="header-wrapper container-fluid">
+  <header class="header-wrapper">
     <div class="row">
-      <div id="logo" class="logo col-md-2 col-sm-12">
+      <div id="logo" class="logo col-md-2">
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
@@ -99,111 +99,71 @@
           </div>
         </div>
         <div class="header-body-bottom row">
-          <div class="sitename col-md-8">
-            <a class="" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><h1 class=""><?php print $site_name; ?></h1></a>
+          <div class="col-md-6">
+            <h1 class="site-name"><a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></h1>
           </div>
-          <div class="block-search col-md-4">
+          <div class="block-search col-md-6">
             <?php global $search_form; print render(drupal_get_form('search_form')); ?>
           </div>
         </div>
       </div>
     </div>
-  </header> <!-- /#page-header -->
+  </header>
 
-<!-- TEMP Navbar -->
 
+<header role="banner" id="page-header">
+  <?php if (!empty($site_slogan)): ?>
+    <p class="lead"><?php print $site_slogan; ?></p>
+  <?php endif; ?>
+
+  <?php print render($page['header']); ?>
+</header> <!-- /#page-header -->
 <div class="navbar-wrapper">
-  <!-- <div id="" class="<?php print $navbar_classes; ?>"> -->
-  <div class="navbar navbar-inverse container-fluid">
-    <div id="main-menu">
-      <div class="content">
-        <ul class="menu">
-          <?php
-            $full_menu_tree = menu_tree_all_data("main-menu");
+  <div id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+    <div class="<?php print $container_class; ?>">
+      <div class="navbar-header">
+        <?php if ($logo): ?>
+          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
 
-            $a = 1;
-            foreach($full_menu_tree as $main_array) {
-              if (!$main_array['link']['hidden']) {
-                echo '<li class="menuitem' . $a++ . '">';
-                $link_alias = drupal_get_path_alias($main_array['link']['link_path']);
-                if($main_array['link']['link_title'] != "Home") {
-                  echo '<a href="/'.$link_alias.'">'.$main_array['link']['link_title'].'</a>';
-                }
-                if($main_array['link']['has_children'] == 1) {
-                  echo "<ul>";
-                  foreach ($main_array['below'] as $sub_menu_array) {
-                    if (!$sub_menu_array['link']['hidden']) {
-                      echo '<li>';
-                      $link_alias = drupal_get_path_alias($sub_menu_array['link']['link_path']);
-                      echo '<a href="/'.$link_alias.'">'.$sub_menu_array['link']['link_title'].'</a>';
-                      echo "</li>";
-                    }
-                  }
-                  echo "</ul>";
-                }
-                echo "</li>";
-              }
-            }
-          ?>
-        </ul>
+        <?php if (!empty($site_name)): ?>
+          <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <?php endif; ?>
+
+        <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <?php endif; ?>
       </div>
-    </div> <!-- end main-menu -->
-    <?php if ($main_menu || $secondary_menu): ?>
-      <nav class="navigation">
-        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'main-menu')), 'heading' => array('text' => t('Main menu'),'level' => 'h2','class' => array('element-invisible')))); ?>
-        <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'secondary-menu')), 'heading' => array('text' => t('Secondary menu'),'level' => 'h2','class' => array('element-invisible')))); ?>
-      </nav>
-    <?php endif; ?>
-    <?php print $content; ?>
 
-    <!--CUSTOM MOBILE MENU-->
-    <form method="" action="" id="mobile-menu-form">
-    	<div class="label-wrapper">
-			  <label for="checkMenu" id="mobile-menu-tab"><span>&equiv;</span> Menu</label>
-		  </div>
-		  <input type="checkbox" id="checkMenu" />
-	    <ul id="mobile-menu">
-        <?php
-          $full_menu_tree = menu_tree_all_data("main-menu");
-
-          foreach($full_menu_tree as $main_array) {
-            if (!$main_array['link']['hidden']) {
-              echo '<li>';
-              $link_alias = drupal_get_path_alias($main_array['link']['link_path']);
-              if($main_array['link']['link_title'] != "Home") {
-                echo '<a href="/'.$link_alias.'">'.$main_array['link']['link_title'].'</a>';
-              }
-              if($main_array['link']['has_children'] == 1) {
-                echo "<ul>";
-                foreach ($main_array['below'] as $sub_menu_array) {
-                  if (!$sub_menu_array['link']['hidden']) {
-                    echo '<li>';
-                    $link_alias = drupal_get_path_alias($sub_menu_array['link']['link_path']);
-                    echo '<a href="/'.$link_alias.'">'.$sub_menu_array['link']['link_title'].'</a>';
-                    echo "</li>";
-                  }
-                }
-                echo "</ul>";
-              }
-              echo "</li>";
-            }
-          }
-        ?>
-		  </ul>
-		  <input type="submit" value="submit" id="mobileSubmit" name="submit" />
-	  </form>
+      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+        <div class="navbar-collapse collapse">
+          <nav role="navigation">
+            <?php if (!empty($primary_nav)): ?>
+              <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($secondary_nav)): ?>
+              <?php print render($secondary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+            <?php endif; ?>
+          </nav>
+        </div>
+      <?php endif; ?>
+    </div>
   </div>
 </div>
 
-
-<!-- End TEMP Navbar -->
-
 <?php if (!empty($page['hero'])): ?>
-  <div class="hero-wrapper">
-    <div class="container">
-      <?php print render($page['hero']); ?>
-    </div>
-
+  <div>
+    <?php print render($page['hero']); ?>
   </div>
 <?php endif; ?>
 

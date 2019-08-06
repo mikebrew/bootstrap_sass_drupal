@@ -13,6 +13,7 @@
 @import 'components/iconfonts';  // Theme Customizations to IconFonts. Recommend installing FontAwesome Module first //
 @import 'components/helpers'; // Global helper classes
 @import "custom/header";
+@import "custom/mainmenu";
 @import 'custom';  // Uncategorized Theme Customizations //
 
 
@@ -325,13 +326,17 @@ li.dropdown:hover > .dropdown-menu { // Display subnav on hover
 
 // Hero section / Carousel slideshow
 .region-hero {
-  background: $blue;
-  padding: 4em 0 2em;
-  min-height: 400px;
-  color: #FFF;
-  border-bottom: 3px solid $orange;
+  // background: $blue;
+  // padding: 4em 0 2em;
+  // min-height: 400px;
+  // color: #FFF;
+  // border-bottom: 3px solid $orange;
   h2 {
     font-size: 3em;
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 .carousel {

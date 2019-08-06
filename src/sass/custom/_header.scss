@@ -2,28 +2,35 @@
 
 header {
   background-color: #1d1d1d;
+  p {
+      margin: 0px;
+  }
   a {
     color: #FFF;
     border-bottom: solid 2px transparent;
-    /* padding-bottom: 2px; */
     &:hover {
       border-bottom: solid 2px #A3273E;
       transition: 0.4s;
     }
   }
-  p {
-      margin: 0px;
-  }
 }
 
 /* Logo */
 .block-logo, .block-delta-blocks-logo {
-  max-width: 110px;
+  // max-width: 110px;
 }
 #logo {
   display: block;
-  width: 100px;
+  // width: 150px;
+  max-width: 120px;
+  width: 120px;
   float: left;
+  a {
+    border-bottom: none!important;
+    &:hover {
+      border-bottom: none!important;
+    }
+  }
   img {
     width: 100%;
     height: auto;
@@ -33,64 +40,89 @@ header {
 
 .header-body {
   position: relative;
-}
-.header-body a:hover {
-  text-decoration: none!important;
-}
-
-/* Explore Temple / Top menu block */
-.header-body-top {
-  display: block;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
-
-/* Explore Temple  */
-.block-252 {
-
-
-}
-/* Top menu */
-#header-menu,
-#block-menu-menu-header-menu {
-  font-family: 'Open Sans', 'Arial', sans-serif;
+  // max-height: 185px;
+  // height: 185px;
+  // width: 80%;
+  // float: left;
   a {
-    padding-left: 12px;
-    padding-right: 12px;
+    &:hover {
+      text-decoration: none!important;
+    }
   }
-  ul.menu {
-      content: "";
-      clear: both;
-      display: table;
-      /* margin-right: auto; */
-      /* margin-left: auto; */
-      float: right;
-  }
-  li {
-    float: left;
-  }
+  /* Explore Temple / Top menu block */
+  .header-body-top {
+    display: block;
+    // position: absolute;
+    top: 0px;
+    width: 100%;
+    font-size: 12px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    /* Explore Temple  */
+    .block-252 {}
+    /* Top menu */
+    a {
+      &:hover {
+        color: #FFF;
+      }
+    }
+    #header-menu,
+    #block-menu-menu-header-menu {
+      font-family: 'Open Sans', 'Arial', sans-serif;
+      a {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      ul.menu {
+          content: "";
+          clear: both;
+          display: table;
+          float: right;
+      }
+      li {
+        float: left;
+        list-style: none;
+      }
+    }
+  }  //end header-body-top
 }
 
 
 /* Site name / Search block */
 .header-body-bottom {
   display: block;
-  position: absolute;
-  top: 40px;
+  // position: absolute;
+  // top: 40px;
+  bottom: 0px;
   width: 100%;
+  /* Site name */
+  // h1.site-name,
+  // h2.site-name,
+  .sitename {
+    display: block;
+    h1,
+    h2 {
+      font-size: 2em;
+    }
+    a {
+      display: inline-block;
+      font-family: 'Crimson Text', serif;
+      font-weight: 100;
+      // font-size: 1.2em!important;
+      font-size: 100%;
+      &:hover {
+        border-bottom: none!important;
+        color: #FFF;
+        // border-bottom: 1px solid green;
+      }
+    }
+  }
 }
 
-/* Site name */
-h1.site-name,
-h2.site-name {
-  font-family: 'Crimson Text', serif;
-  font-weight: 100;
-  font-size: 2em!important;
-}
-.site-name a:hover {
-  border-bottom: none!important;
-}
+
+
 
 /* Search */
 .block-search {
@@ -115,26 +147,28 @@ h2.site-name {
     visibility: visible;
     max-height: 100px;
   }
+  button[type="submit"],
+  input[type="submit"],
+  a::after {
+    width: 22px;
+    height: 23px;
+    background: url('https://www.temple.edu/sites/all/modules/custom/tu_global/images/png/legacy-icon-search.png') no-repeat 0 center transparent;
+    background-size: 22px 23px;
+    text-indent: -10000em;
+    overflow: hidden;
+    border: none;
+  }
+  button[type="submit"],
+  input[type="submit"],
+  a,
+  a::after {
+    position: absolute;
+    top: 11px;
+    right: 15px;
+  }
   .form-actions {
-    button[type="submit"],
-    input[type="submit"],
-    a::after {
-      width: 22px;
-      height: 23px;
-      background: url('https://www.temple.edu/sites/all/modules/custom/tu_global/images/png/legacy-icon-search.png') no-repeat 0 center transparent;
-      background-size: 22px 23px;
-      text-indent: -10000em;
-      overflow: hidden;
-      border: none;
-    }
-    button[type="submit"],
-    input[type="submit"],
-    a,
-    a::after {
-      position: absolute;
-      top: 11px;
-      right: 15px;
-    }
+
+
   }
 }
 
