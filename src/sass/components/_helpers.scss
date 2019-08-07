@@ -1,3 +1,37 @@
+
+// Block Spacing
+.padding-1-p5em {
+  padding: 1em .5em;
+}
+.padding-1em {
+  padding: 1em;
+}
+.padding-1em-2em {
+  padding: 1em 2em;
+}
+
+// Text
+.text-white {
+  color: #FFF;
+}
+.text-black {
+  color: #000;
+}
+.link-white {
+  a {
+    color: #FFF;
+    &:hover {
+      color: #EEE;
+    }
+  }
+}
+.link-underline {
+  a {
+    text-decoration: underline!important;
+  }
+}
+
+// Buttons
 .btn-wrap-text,
 .btn-wrap {
   //Wrap button text
@@ -5,9 +39,18 @@
   word-wrap: break-word !important;
 }
 
+// Images
 .img-responsive {
   img {
     width: 100%;
     height: auto;
+  }
+}
+
+.img-border-lg {
+  img {
+    padding: 20px;
+    background: #CCC;
+    border: solid 1px #333;
   }
 }

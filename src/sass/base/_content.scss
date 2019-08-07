@@ -3,4 +3,27 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.content-inner {}
+.content-inner {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.content-beta-wrapper {
+  @extend .bg-silver;
+  // color: #FFF;
+  h3 {
+    a {
+      color: #000;
+      &:hover {
+        color: #990000;
+      }
+    }
+  }
+  img {
+    background: darken($silver, 5);
+    border-color: darken($silver, 10);
+  }
+}

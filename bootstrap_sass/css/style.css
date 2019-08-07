@@ -7414,7 +7414,7 @@ td.visible-print {
   background-color: #AAAAAA;
 }
 
-.bg-silver {
+.bg-silver, .content-beta-wrapper {
   background-color: #DDDDDD;
 }
 
@@ -7702,6 +7702,37 @@ td.visible-print {
   stroke: #111111;
 }
 
+.padding-1-p5em {
+  padding: 1em 0.5em;
+}
+
+.padding-1em {
+  padding: 1em;
+}
+
+.padding-1em-2em {
+  padding: 1em 2em;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.text-black {
+  color: #000;
+}
+
+.link-white a {
+  color: #FFF;
+}
+.link-white a:hover {
+  color: #EEE;
+}
+
+.link-underline a {
+  text-decoration: underline !important;
+}
+
 .btn-wrap-text,
 .btn-wrap {
   white-space: normal !important;
@@ -7711,6 +7742,12 @@ td.visible-print {
 .img-responsive img {
   width: 100%;
   height: auto;
+}
+
+.img-border-lg img {
+  padding: 20px;
+  background: #CCC;
+  border: solid 1px #333;
 }
 
 /* Header */
@@ -8308,6 +8345,21 @@ MENU STYLES
 .content-section {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.content-inner a:hover {
+  text-decoration: none;
+}
+
+.content-beta-wrapper h3 a {
+  color: #000;
+}
+.content-beta-wrapper h3 a:hover {
+  color: #990000;
+}
+.content-beta-wrapper img {
+  background: #d0d0d0;
+  border-color: #c4c4c4;
 }
 
 footer {
