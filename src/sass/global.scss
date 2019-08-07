@@ -14,6 +14,8 @@
 @import 'components/helpers'; // Global helper classes
 @import "custom/header";
 @import "custom/mainmenu";
+@import "base/content";
+@import "base/footer";
 @import 'custom';  // Uncategorized Theme Customizations //
 
 
@@ -280,7 +282,7 @@ form {
 
 // Header
 body.navbar-is-fixed-top {
-  padding-top: 70px; // Add padding for fixed navigation
+  // padding-top: 70px; // Add padding for fixed navigation
 }
 .navbar-header {
   .logo {
@@ -400,62 +402,5 @@ li.dropdown:hover > .dropdown-menu { // Display subnav on hover
 .view-id-blog_aside_list {
   a.active {
     color: $red;
-  }
-}
-
-// Footer Prefix
-// *******************
-.footer_pre {
-  padding: 1em 0;
-  background: darken($gray, 30);
-  .form-item {
-    @extend .col-md-10;
-  }
-  .form-actions {
-    @extend .col-md-2;
-    @extend .col-xs-12;
-  }
-  .btn-primary {
-    height: 45px;
-    background-color: darken($gray, 40);
-    border-color: darken($gray, 50);
-    width: 100%;
-  }
-}
-
-// Footer
-// *******************
-.footer {
-  width: 100%;
-  // margin-top: 50px;
-  background-color: #333;
-  padding: 2em 0;
-  a {
-    color: lighten($blue, 40);
-  }
-  #block-menu-menu-footer-menu { // Footer menu links
-    @extend .col-sm-4;
-  }
-  #block-block-13 { // Payment block | PayPal
-    @extend .col-sm-4;
-    // @extend .pull-right;
-    img {
-      float: right;
-    }
-  }
-  #block-block-5 { // Copyright
-    @extend .col-sm-4;
-    color: #FFF;
-    // @extend .text-center;
-  }
-
-  #block-block-2 { // Secondary footer links | Intranet, Log out
-    @extend .col-sm-12;
-    // @extend .pull-right;
-
-  }
-  #block-block-3 { // Address block
-    @extend .col-md-12;
-    @extend .text-center;
   }
 }

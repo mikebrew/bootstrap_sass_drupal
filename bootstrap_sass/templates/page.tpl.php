@@ -99,8 +99,15 @@
           </div>
         </div>
         <div class="header-body-bottom row">
-          <div class="sitename col-md-8">
-            <a class="" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><h1 class=""><?php print $site_name; ?></h1></a>
+          <div id="branding" class="sitename col-md-8 row">
+            <div id="logo-sm" class="logo-sm">
+              <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+                <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+              </a>
+            </div>
+            <div id="sitename" class="sitename-text">
+              <a class="" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><h1 class=""><?php print $site_name; ?></h1></a>
+            </div>
           </div>
           <div class="block-search col-md-4">
             <?php global $search_form; print render(drupal_get_form('search_form')); ?>
@@ -109,8 +116,6 @@
       </div>
     </div>
   </header> <!-- /#page-header -->
-
-<!-- TEMP Navbar -->
 
 <div class="navbar-wrapper">
   <!-- <div id="" class="<?php print $navbar_classes; ?>"> -->
@@ -195,9 +200,6 @@
   </div>
 </div>
 
-
-<!-- End TEMP Navbar -->
-
 <?php if (!empty($page['hero'])): ?>
   <div class="hero-wrapper">
     <div class="container">
@@ -242,6 +244,27 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+      <?php if (!empty($page['content_beta'])): ?>
+        <div class="content-beta-wrapper content-section row">
+          <div class="content-beta-inner content-inner <?php print $container_class; ?>">
+            <?php print render($page['content_beta']); ?>
+          </div>
+        </div>
+      <?php endif; ?>
+      <?php if (!empty($page['content_gamma'])): ?>
+        <div class="content-gamma-wrapper content-section row">
+          <div class="content-gamma-inner content-inner <?php print $container_class; ?>">
+            <?php print render($page['content_gamma']); ?>
+          </div>
+        </div>
+      <?php endif; ?>
+      <?php if (!empty($page['content_omega'])): ?>
+        <div class="content-omega-wrapper content-section row">
+          <div class="content-omega-inner content-inner <?php print $container_class; ?>">
+            <?php print render($page['content_omega']); ?>
+          </div>
+        </div>
+      <?php endif; ?>
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
@@ -259,8 +282,17 @@
     <div class="<?php print $container_class; ?>"><?php print render($page['footer_pre']); ?></div>
   </div>
 <?php endif; ?>
-<?php if (!empty($page['footer'])): ?>
-  <footer class="footer <?php print $container_class; ?>">
+<footer class="footer <?php print $container_class; ?>">
+  <?php if (!empty($page['footer'])): ?>
     <?php print render($page['footer']); ?>
-  </footer>
-<?php endif; ?>
+  <?php endif; ?>
+  <?php if (!empty($page['footer_beta'])): ?>
+    <?php print render($page['footer_beta']); ?>
+  <?php endif; ?>
+  <?php if (!empty($page['footer_gamma'])): ?>
+    <?php print render($page['footer_gamma']); ?>
+  <?php endif; ?>
+  <?php if (!empty($page['footer_omega'])): ?>
+    <?php print render($page['footer_omega']); ?>
+  <?php endif; ?>
+</footer>
