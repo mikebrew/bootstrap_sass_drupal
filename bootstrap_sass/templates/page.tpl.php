@@ -83,7 +83,7 @@
         </a>
       </div>
       <div class="header-body col-md-10">
-        <div class="header-body-top row">
+        <div class="header-body-top ">
           <div id="header-explore" class="col-md-6">
             <?php
                $block =block_load('block',252);

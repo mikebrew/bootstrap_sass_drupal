@@ -7815,11 +7815,15 @@ header a:hover {
   top: 0px;
   width: 100%;
   font-size: 12px;
-  border-bottom: 1px solid #333;
   margin-bottom: 5px;
   padding: 10px 0px;
   /* Explore Temple  */
   /* Top menu */
+}
+@media screen and (max-width: 700px) {
+  .header-body .header-body-top .block-252, .header-body .header-body-top .header-explore {
+    display: none;
+  }
 }
 .header-body .header-body-top a:hover {
   color: #FFF;
@@ -7844,6 +7848,31 @@ header a:hover {
 .header-body .header-body-top #block-menu-menu-header-menu li {
   float: left;
   list-style: none;
+}
+@media screen and (max-width: 700px) {
+  .header-body .header-body-top #header-menu,
+.header-body .header-body-top #block-menu-menu-header-menu {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (min-width: 701px) {
+  .header-body .header-body-top {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .header-body .header-body-top:after {
+    clear: both;
+  }
+  .header-body .header-body-top:before, .header-body .header-body-top:after {
+    display: table;
+    content: " ";
+  }
+}
+@media screen and (min-width: 701px) {
+  .header-body .header-body-top {
+    border-bottom: 1px solid #333;
+  }
 }
 
 /* Site name / Search block */
@@ -7880,6 +7909,7 @@ header a:hover {
   display: inline-block;
   font-family: "Crimson Text", serif;
   font-weight: 100;
+  border-bottom: none !important;
   font-size: 100%;
 }
 #branding #sitename a:hover {
@@ -8010,7 +8040,7 @@ MENU STYLES
 }
 #block-system-main-menu .content ul.menu li a.active-trail,
 #main-menu .content ul.menu li a.active-trail {
-  background-color: #711224;
+  background-color: inherit;
   background-image: none;
   color: #fff;
   font-family: "Open Sans", "Arial", sans-serif;
@@ -8029,7 +8059,7 @@ MENU STYLES
 #main-menu .content ul.menu li a:hover,
 #main-menu .content ul.menu li a:focus {
   background-color: inherit;
-  border-bottom: solid 3px #711224;
+  border-bottom: solid 3px inherit;
   color: #fff;
 }
 #block-system-main-menu .content ul.menu li.last a,
@@ -8158,12 +8188,6 @@ MENU STYLES
   left: 0;
   width: auto;
   display: none;
-}
-@media (min-width: 980px) {
-  #block-system-main-menu .content > ul.menu li ul,
-#main-menu .content > ul.menu li ul {
-    top: 2.1em;
-  }
 }
 #block-system-main-menu .content > ul.menu li a,
 #main-menu .content > ul.menu li a {
@@ -8631,17 +8655,19 @@ li.dropdown:hover > .dropdown-menu {
   display: block;
 }
 
-.region-hero h2 {
-  font-size: 3em;
-}
 .region-hero img {
   width: 100%;
   height: auto;
 }
 
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
+.carousel-caption h2 {
+  font-size: 3em;
+}
 @media screen and (min-width: 701px) {
   .carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
     padding: 0.5em 1em 2em;
     border-radius: 10px;
   }
@@ -8649,7 +8675,25 @@ li.dropdown:hover > .dropdown-menu {
 @media screen and (max-width: 700px) {
   .carousel-caption {
     position: relative;
+    background: black;
     width: 100%;
+    right: 0;
+    left: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5em;
+  }
+  .carousel-caption p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .carousel-indicators {
+    display: none;
   }
 }
 

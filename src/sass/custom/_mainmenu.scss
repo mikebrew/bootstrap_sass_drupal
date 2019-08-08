@@ -19,7 +19,8 @@ $font-base-family: 'Open Sans', 'Arial', sans-serif;
 $menu-wrapper-bg: $menu-color-primary !default;
 
 // Top Links
-$top-activetrail-bg: $menu-color-active !default;
+// $top-activetrail-bg: $menu-color-active !default;
+$top-activetrail-bg: inherit !default;
 $top-link-bg: $menu-color-primary !default;
 $top-link-bg-hover: $menu-color-hover !default;
 
@@ -199,8 +200,6 @@ MENU STYLES
         //.block-main-menu .content > ul.menu li
         // Top level links
         // --------------------
-        // width:16.66%;
-        // width: 140px;
         display: block;
         float: left;
         margin: 0;
@@ -250,7 +249,7 @@ MENU STYLES
           display:none;
           @include breakpoint(normal) {
             // top: 3.2em;
-            top: 2.1em;
+            // top: 2.1em;
           }
 
         }
