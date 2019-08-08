@@ -1,5 +1,5 @@
 
-// Block Spacing
+// Block Spacing / Grid
 .padding-1-p5em {
   padding: 1em .5em;
 }
@@ -9,6 +9,29 @@
 .padding-1em-2em {
   padding: 1em 2em;
 }
+
+@media screen and (min-width: 700px) {
+  .gutter-md-right-5px {
+    margin-left: -5px;
+    margin-right: 5px;
+  }
+  .gutter-md-left-5px {
+    margin-right: -5px;
+    margin-left: 5px;
+  }
+}
+
+.row { // Equial heights
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display:         flex;
+}
+.row > [class*='col-'] {
+	 // display: flex;
+	 // flex-direction: column;
+}
+
 
 // Text
 .text-white {
@@ -49,8 +72,16 @@
 
 .img-border-lg {
   img {
-    padding: 20px;
-    background: #CCC;
-    border: solid 1px #333;
+    // padding: 20px;
+    // background: #CCC;
+    border: solid 2px #333;
   }
+}
+
+// Blocks
+.callout {
+  min-height: 200px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }

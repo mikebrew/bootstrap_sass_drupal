@@ -36,6 +36,12 @@ h4 {
   font-family: $font-heading;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 // Helper Classes
 .label-support-partial {
   background-color: $color-green-muted;
@@ -209,45 +215,6 @@ $label-day-color: #777;
   }
 } // end labels
 
-table {
-  tr.congregation, tr.special {
-    // border-bottom: solid;
-    background-color: #d9edf7!important;
-  }
-}
-
-//
-form {
-  div {
-    @extend .form-group;
-    @extend .form-group-lg;
-  }
-}
-
-
-// CLM specific
-.treasuresfromgodsword {
-  background-color: #5A6A70;
-  color: #FFF;
-}
-.applyyourselffieldministry {
-  background-color: #C18626;
-  color: #FFF;
-}
-.livingaschristians {
-  background-color: #961526;
-  color: #FFF;
-}
-.assignable {
-  display: block;
-}
-.unassignable {
-  display: none;
-}
-
-
-// Content Region
-.region-content {}
 
 
 // Aside Secondary
@@ -328,11 +295,6 @@ li.dropdown:hover > .dropdown-menu { // Display subnav on hover
 
 // Hero section / Carousel slideshow
 .region-hero {
-  // background: $blue;
-  // padding: 4em 0 2em;
-  // min-height: 400px;
-  // color: #FFF;
-  // border-bottom: 3px solid $orange;
   h2 {
     font-size: 3em;
   }
@@ -343,6 +305,18 @@ li.dropdown:hover > .dropdown-menu { // Display subnav on hover
 }
 .carousel {
   // height: 500px;
+}
+.carousel-caption {
+  @media screen and (min-width: 701px) {
+    background: rgba(0, 0, 0, .5);
+    padding: .5em 1em 2em;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 700px) {
+    position: relative;
+    // background: #000;
+    width: 100%;
+  }
 }
 .carousel-control.right, .carousel-control.left {
   background-image: none;

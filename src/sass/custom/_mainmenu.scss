@@ -331,23 +331,27 @@ MENU STYLES
   @media screen and (max-width: 739px) { display: block; }
   @media screen and (min-width: 740px) { display: none; }
 
-  border-bottom:.2em solid #9e1b34;
-  background:#ffffff;
+  // border-bottom:.2em solid #9e1b34;
+  // background:#ffffff;
   padding-top:.25em;
   label {
     position:relative;
 		z-index:20;
 		display:block;
-		width:82px;
+		// width:82px;
 		height:25px;
+    width: 100%;
 		overflow:hidden;
 		text-indent:-1000em;
 		cursor:pointer;
-		margin:0 0 0 2.75%;
-		border-radius: .25em .25em 0 0;
+		// margin:0 0 0 2.75%;
+    margin: 0;
+		// border-radius: .25em .25em 0 0;
+    border-radius: .25em;
 		border:none;
 		text-transform:uppercase;
-		background:url('../images/mobile-menu-options-icon.png') no-repeat 10px center #9e1b34;
+		// background:url('../images/mobile-menu-options-icon.png') no-repeat 10px center #9e1b34;
+    background:url('../images/mobile-menu-options-icon.png') no-repeat 10px center transparent;
   }
   #checkMenu {
     position: absolute;
