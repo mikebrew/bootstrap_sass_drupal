@@ -1,0 +1,24 @@
+{
+  "name": "bootstrap_sass_drupal",
+  "version": "1.0.0",
+  "description": "Bootstrap based theme",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikebrew/bootstrap_sass_drupal.git"
+  },
+  "author": "Michael Brewington",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikebrew/bootstrap_sass_drupal/issues"
+  },
+  "homepage": "https://github.com/mikebrew/bootstrap_sass_drupal#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
